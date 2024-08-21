@@ -118,3 +118,15 @@ body{
     border-bottom-right-radius: 10px;
     background: linear-gradient(45deg, rgb(0,0,0), rgb(34,84,141));
 }
+
+@media screen and (min-widht: 720px) {
+    .content{
+        width: 50%;
+    }
+}
+
+@media screen and (min-widht: 1282px) {
+    .content{
+        width: 30%;
+    }
+}
