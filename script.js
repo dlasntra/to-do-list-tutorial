@@ -48,6 +48,10 @@ document.getElementById('formulario'). addEventListener('submit', function(event
             }
         });
 
+        if (document.querySelector('.content').style.background == "black") {
+            span.style.color = "white";
+        }
+
         li.appendChild(checkbox);
         li.appendChild(span);
         li.appendChild(buttonDelete);
@@ -60,4 +64,40 @@ document.getElementById('formulario'). addEventListener('submit', function(event
 
     }
 
+});
+
+document.getElementById('tarea').addEventListener('focus', function(event){
+    document.querySelector('.content').style.background = "black";
+
+    let ul = document.getElementById('listaTarea');
+    let lista = ul.getElementsByTagName('li');
+    let span = ul.getElementsByTagName('span');
+    let checkbox = ul.getElementsByTagName('input');
+
+    for( let i = 0; span.length; i++){
+        if (checkbox[i].checked) {
+            span[i].style.color = "gray";
+        } else{
+            span[i].style.color = "white"
+        }
+    }
+
+});
+
+document.getElementById('tarea').addEventListener('blur', function(event){
+    document.querySelector('.content').style.background = "white";
+    
+    
+    let ul = document.getElementById('listaTarea');
+    let lista = ul.getElementsByTagName('li');
+    let span = ul.getElementsByTagName('span');
+    let checkbox = ul.getElementsByTagName('input');
+
+    for( let i = 0; span.length; i++){
+        if (checkbox[i].checked) {
+            span[i].style.color = "gray";
+        } else{
+            span[i].style.color = "black"
+        }
+    }
 });
